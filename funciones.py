@@ -8,43 +8,47 @@ def continuar ():
         key = msvcrt.getwch()
     os.system ("cls")
 
-def carga(self,doc):
+def carga(doc):
      print("------------------INGRESE RUTA DEL ARCHIVO--------------------")
      documeto = str(doc)
      archivo = open(documeto, "r") 
-     print(archivo.read())
+     print("Archivo cargado satisfactoriamente")
 
 def mostar (pos):
-                lista = []
-                archivo = open('archivo_prueba.lfp', "r")
-                with archivo as doc:
-                 next(doc, None)
-                for line in doc:
-                    #line = line.rstrip()
-                    #separador = ";"
-                    lista = line.split(";")
-                    mostrar = lista[pos]
+    lista = []
+    print("------------------INGRESE RUTA DEL ARCHIVO--------------------")
+    doc = str(input())
+    archivo = open(doc, "r")
+    with archivo as doc:
+     next(doc, None)
+     for line in doc:
+         lista = line.split(";")
+         mostrar = lista[pos]
+         print(mostrar)
 
-                    print(mostrar)
 def buscar (nombre):
-                man = open('archivo_prueba.lfp')
-                for linea in man:
-                    linea = linea.rstrip()
-                    if re.search(nombre, linea):
-                        lista = []
-                        lista = linea.split(";")
-                        mostrar = lista[0]
-                        print(mostrar)
+  print("------------------INGRESE RUTA DEL ARCHIVO--------------------")
+  doc = str(input())
+  man = open(doc)
+  for linea in man:
+     linea = linea.rstrip()
+     if re.search(nombre, linea):
+        lista = []
+        lista = linea.split(";")
+        mostrar = lista[0]
+        print(mostrar)
 
 def buscara (aaa):
-                man = open('archivo_prueba.lfp')
-                for linea in man:
-                    linea = linea.rstrip()
-                    if re.search(aaa, linea):
-                        lista = []
-                        lista = linea.split(";")
-                        mostrar = lista[0]+" GENERO "+lista[3]
-                        print(mostrar)
+ print("------------------INGRESE RUTA DEL ARCHIVO--------------------")
+ doc = str(input())
+ man = open(doc)
+ for linea in man:
+     linea = linea.rstrip()
+     if re.search(aaa, linea):
+        lista = []
+        lista = linea.split(";")
+        mostrar = lista[0]+" GENERO "+lista[3]
+        print(mostrar)
 
 
 def gestion():
